@@ -1,0 +1,1 @@
+For anyone seeing this, I saved a lot of lines in the logic by using if ((cChoice+2-hChoice)%3) to determine who won the Rock Paper Scissors
