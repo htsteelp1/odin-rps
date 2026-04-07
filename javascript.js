@@ -18,6 +18,10 @@ scissorsButton.textContent = "Scissors";
 let paperButton = document.createElement("button");
 paperButton.classList.add("controlButton");
 paperButton.textContent = "Paper";
+let hDecision = document.querySelector("#hDecision span");
+let cDecision = document.querySelector("#cDecision span");
+let winner = document.querySelector("#winner span");
+let getChoice = ["Rock", "Paper", "Scissors"];
 
 function addControls() {
     controls.appendChild(rockButton);
@@ -51,17 +55,6 @@ function clickHandler(event) {
     }
 }
 
-function numToRPS(choice) {
-    switch(choice) {
-        case 0:
-            return "Rock";
-        case 1:
-            return "Paper";
-        case 2:
-            return "Scissors";
-    //     Since im submitting this and this course has not taught arrays for JavaScript, I used a switch statemnt
-    }
-}
 
 function getComputerChoice() {
     return Math.trunc(Math.random()*9)%3; // Gets a random number between 0-2
@@ -73,19 +66,38 @@ function playRound() {
 
 }
 function performScore() {
+    let winState;
     if (cChoice === hChoice) {
+        winState = 0;
     }
     else if ((cChoice+2-hChoice)%3) { // Math Expression I made for Rock Paper Scisors Winner
         hScore++;
+        winState = 1;
     }
     else {
         cScore++;
+        winState = 2;
     }
-    console.log("Your Choice: "+numToRPS(hChoice));
-    console.log("Computer Choice: "+numToRPS(cChoice));
     humanScoreValue.textContent = hScore.toString();
     computerScoreValue.textContent = cScore.toString();
     removeControls();
+    displayDecision(winState);
+    controls.appendChild(playButton);
+}
+function displayDecision(winState) {
+    hDecision.textContent = getChoice.at(hChoice);
+    cDecision.textContent = getChoice.at(cChoice);
+    switch (winState) {
+        case 0:
+            winner.textContent = "Tie!";
+            break;
+        case 1:
+            winner.textContent = "Human!";
+            break;
+        case 2:
+            winner.textContent = "Computer!";
+            break;
+    }
 }
 
 
