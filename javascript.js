@@ -1,5 +1,5 @@
-let hScore;
-let cScore;
+let hScore = 0;
+let cScore = 0;
 function numToRPS(choice) {
     switch(choice) {
         case 0:
@@ -38,16 +38,9 @@ function playRound() {
     console.log("Your Choice: "+numToRPS(hChoice));
     console.log("Computer Choice: "+numToRPS(cChoice));
 }
-function playGame() {
-    hScore = 0;
-    cScore = 0;
-    console.log(`Welcome to Rock Paper Scissors`);
-    for (let i = 0; i<5; i++) {
-        playRound();
-        console.log("Score (H-C): " + hScore + "-" + cScore);
-    }
-    console.log("Winner: " + "Human".repeat(hScore>cScore) + "Computer".repeat(hScore<cScore) + "Tie".repeat(hScore===cScore));
-}
-playGame()
+let humanScoreValue = document.querySelector("#humanScore .scoreValue");
+humanScoreValue.textContent = hScore.toString();
+let computerScoreValue = document.querySelector("#computerScore .scoreValue");
+computerScoreValue.textContent = cScore.toString();
 
 

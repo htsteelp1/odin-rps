@@ -1,0 +1,59 @@
+body {
+    background-color: #282d36;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: "Roboto Light", sans-serif;
+    gap: 10px;
+}
+h1 {
+    color: dodgerblue;
+    text-align: center;
+}
+#score {
+    display: flex;
+    align-items: center;
+    width: 300px;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+#dash {
+    color: white;
+    font-size: 40px;
+}
+#playRound {
+    margin-top: 20px;
+    color: white;
+    background-color: red;
+    border-color: transparent;
+    outline-style: none;
+    border-radius: 5px;
+
+}
+#playRound:hover {
+    background-color: darkred;
+    color: lightgray;
+}
+#humanScore {
+    background-color: limegreen;
+}
+#computerScore {
+    background-color: dodgerblue;
+}
+.scoreValue {
+    color: white;
+    text-align: center;
+    font-size: 40px;
+
+}
+.player {
+    color: white;
+    font-size: 20px;
+    margin-top: 20px;
+}
+.scoreBox {
+    padding: 20px;
+    border-radius: 10px;
+    flex: 1 1 0;
+    text-align: center;
+}
